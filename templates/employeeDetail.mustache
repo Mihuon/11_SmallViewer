@@ -1,0 +1,40 @@
+{{#employee}}
+<h1>Detail zaměstnance {{name}} {{surname}}</h1>
+{{/employee}}
+<dl>
+    {{#employee}}
+    <dt>Uživatelské jméno</dt>
+    <dd>{{login}}</dd>
+
+    <dt>Administrátor</dt>
+    <dd>{{admin}}</dd>
+
+    <dt>Jméno</dt>
+    <dd>{{name}}</dd>
+
+    <dt>Příjmení</dt>
+    <dd>{{surname}}</dd>
+
+    <dt>Pozice</dt>
+    <dd>{{job}}</dd>
+
+    <dt>Mzda</dt>
+    <dd>{{wage}}</dd>
+
+    <dt>Místnost</dt>
+    {{/employee}}
+    {{#room}}
+        <dd>
+            <a href='../room/detail.php?roomId={{room_id}}'>{{name}}</a>
+        </dd>
+    {{/room}}
+    {{^room}}<dd>&mdash;</dd>{{/room}}
+
+    <dt>Klíče</dt>
+    {{#keys}}
+        <dd>
+            <a href='../room/detail.php?roomId={{kRo}}'>{{rNa}}</a>
+        </dd>
+    {{/keys}}
+    {{^keys}}<dd>&mdash;</dd>{{/keys}}
+</dl>
